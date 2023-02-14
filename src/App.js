@@ -23,16 +23,14 @@ export default function MyForm() {
 
     setMessage('');
 
-    if (!regex.test(email)) {
-      setMessage('Please enter a valid email');
-    }
-
-    if (password.length < 5 || password === '') {
-      setMessage('Your password must be more than 4 characters');
-    }
-
     if (email === '') {
       setMessage('Please enter your email.');
+    } else if (!regex.test(email)) {
+      setMessage('Please enter a valid email');
+    } else if (password.length < 5 || password === '') {
+      setMessage('Your password must be more than 4 characters');
+    } else {
+      setMessage('You are registered!');
     }
 
     console.log(email, password);
