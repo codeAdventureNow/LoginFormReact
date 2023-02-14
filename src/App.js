@@ -31,9 +31,8 @@ export default function MyForm() {
       setMessage('Your password must be more than 4 characters');
     } else {
       setMessage('You are registered!');
+      console.log(email, password);
     }
-
-    console.log(email, password);
   }
 
   return (
