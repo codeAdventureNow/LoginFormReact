@@ -31,24 +31,38 @@ export default function MyForm() {
       setMessage('Your password must be more than 4 characters');
     } else {
       setMessage('You are registered!');
+      setEmail('');
+      setPassword('');
       console.log(email, password);
     }
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:{' '}
-          <input value={email} onChange={handleEmailChange} type='text' />
-        </label>
-        <label>
-          Pasword:{' '}
-          <input value={password} onChange={handlePasswordChange} type='text' />
-        </label>
-        <button type='submit'>Enter</button>
+    <div className='wrapper'>
+      <h1>Sign In</h1>
+      <form className='form' onSubmit={handleSubmit}>
+        <div className='inputs'>
+          <label>
+            <b>Email: </b>
+            <input value={email} onChange={handleEmailChange} type='text' />
+          </label>
+          <label>
+            <b> Password: </b>
+
+            <input
+              value={password}
+              onChange={handlePasswordChange}
+              type='text'
+            />
+          </label>
+        </div>
+        <div className='button'>
+          <button type='submit'>Enter</button>
+        </div>
       </form>
-      <p> {message}</p>
+      <div>
+        <p> {message}</p>
+      </div>
     </div>
   );
 }
