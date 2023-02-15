@@ -44,12 +44,18 @@ export default function MyForm() {
         <div className='inputs'>
           <label>
             <b>Email: </b>
-            <input value={email} onChange={handleEmailChange} type='text' />
+            <input
+              placeholder='email'
+              value={email}
+              onChange={handleEmailChange}
+              type='text'
+            />
           </label>
           <label>
             <b> Password: </b>
 
             <input
+              placeholder='password'
               value={password}
               onChange={handlePasswordChange}
               type='text'
