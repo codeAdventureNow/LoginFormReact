@@ -61,7 +61,7 @@ export default function MyForm() {
         </div>
       </form>
       <div>
-        <p> {message}</p>
+        <p> {password.length > 4 ? '' : message}</p>
       </div>
     </div>
   );
