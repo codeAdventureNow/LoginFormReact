@@ -24,7 +24,7 @@ export default function MyForm() {
     if (password.length < 5 || password === '') {
       setPasswordError('Your password must be 5 characters or more.');
     } else {
-      setSuccessMessage('You are registered!');
+      setSuccessMessage('Sign in succesful!');
       setEmail('');
       setPassword('');
       console.log(email, password);
