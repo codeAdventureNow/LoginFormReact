@@ -22,7 +22,7 @@ export default function MyForm() {
     e.preventDefault();
 
     if (password.length < 5 || password === '') {
-      setPasswordError('Your password must be 5 characters or more.');
+      setPasswordError('Password must be 5 characters or more.');
     } else {
       setSuccessMessage('Sign in succesful!');
       setEmail('');
@@ -39,7 +39,7 @@ export default function MyForm() {
           <label>
             <p>Email: </p>
             <input
-              placeholder='email'
+              placeholder='Email'
               value={email}
               onChange={handleEmailChange}
               type='email'
@@ -50,7 +50,7 @@ export default function MyForm() {
             <p> Password: </p>
 
             <input
-              placeholder='password'
+              placeholder='Password'
               value={password}
               onChange={handlePasswordChange}
               type='password'

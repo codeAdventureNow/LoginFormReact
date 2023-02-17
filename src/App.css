@@ -8,7 +8,8 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 20px;
   padding: 0;
-  background: #fffaf0;
+
+  background: linear-gradient(to right, #ff7f50, #ffd700);
 }
 
 h1 {
@@ -52,8 +53,20 @@ ul {
 label {
   display: block;
 }
-input {
+input[type='email'],
+input[type='password'] {
   margin: 5px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  outline: none;
+}
+
+input[type='email']:focus,
+input[type='password']:focus {
+  border: 1px solid blue;
+  border-radius: 3px;
 }
 
 .wrapper {
@@ -62,7 +75,6 @@ input {
   justify-content: center;
   align-items: center;
   height: 70vh;
-  /* outline: 1px solid red; */
 }
 
 .form {
@@ -71,6 +83,7 @@ input {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to right, #ff7f50, #ffd700);
+  background: #fffaf0;
   /* background: #ff7f50; */
   width: 350px;
   border-radius: 3%;
@@ -91,6 +104,7 @@ input {
 
 .errorMessage {
   font-size: 12px;
+  color: red;
 }
 
 button {
