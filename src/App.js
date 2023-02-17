@@ -48,7 +48,7 @@ export default function MyForm() {
               placeholder='email'
               value={email}
               onChange={handleEmailChange}
-              type='text'
+              type='email'
             />
           </label>
           <label>
