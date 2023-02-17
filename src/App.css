@@ -72,7 +72,7 @@ input {
   align-items: center;
   background: linear-gradient(to right, #ff7f50, #ffd700);
   /* background: #ff7f50; */
-  width: 300px;
+  width: 350px;
   border-radius: 3%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -87,6 +87,10 @@ input {
 
 .message {
   margin: 10px;
+}
+
+.errorMessage {
+  font-size: 12px;
 }
 
 button {

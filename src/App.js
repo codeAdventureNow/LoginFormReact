@@ -58,12 +58,13 @@ export default function MyForm() {
             />
           </label>
         </div>
+        {passwordError && <p className='errorMessage'>{passwordError}</p>}
         <div className='button'>
-          <button type='submit'>Enter</button>
+          <button type='submit'>Sign In</button>
         </div>
       </form>
       <div className='message'>
-        <p>{successMessage ? successMessage : passwordError}</p>
+        <p>{successMessage}</p>
       </div>
     </div>
   );
