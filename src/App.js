@@ -4,33 +4,27 @@ import { useState } from 'react';
 export default function MyForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
   function handleEmailChange(e) {
-    e.preventDefault();
-
     setEmail(e.target.value);
   }
 
   function handlePasswordChange(e) {
-    e.preventDefault();
+    if (password.length > 4) {
+      setPasswordError('');
+    }
     setPassword(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-    setMessage('');
-
-    if (email === '') {
-      setMessage('Please enter your email.');
-    } else if (!regex.test(email)) {
-      setMessage('Please enter a valid email');
-    } else if (password.length < 5 || password === '') {
-      setMessage('Your password must be more than 4 characters');
+    if (password.length < 5 || password === '') {
+      setPasswordError('Your password must be 5 characters or more.');
     } else {
-      setMessage('You are registered!');
+      setSuccessMessage('You are registered!');
       setEmail('');
       setPassword('');
       console.log(email, password);
@@ -43,22 +37,24 @@ export default function MyForm() {
       <form className='form' onSubmit={handleSubmit}>
         <div className='inputs'>
           <label>
-            <b>Email: </b>
+            <p>Email: </p>
             <input
               placeholder='email'
               value={email}
               onChange={handleEmailChange}
               type='email'
+              required
             />
           </label>
           <label>
-            <b> Password: </b>
+            <p> Password: </p>
 
             <input
               placeholder='password'
               value={password}
               onChange={handlePasswordChange}
-              type='text'
+              type='password'
+              required
             />
           </label>
         </div>
@@ -66,8 +62,8 @@ export default function MyForm() {
           <button type='submit'>Enter</button>
         </div>
       </form>
-      <div>
-        <p> {password.length > 4 ? '' : message}</p>
+      <div className='message'>
+        <p>{successMessage ? successMessage : passwordError}</p>
       </div>
     </div>
   );

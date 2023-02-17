@@ -85,6 +85,10 @@ input {
   margin-top: 10px;
 }
 
+.message {
+  margin: 10px;
+}
+
 button {
   background-color: #483d8b;
   border: none;
