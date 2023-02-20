@@ -21,10 +21,10 @@ export default function MyForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (password.length < 5 || password === '') {
+    if (password.length < 5) {
       setPasswordError('Password must be 5 characters or more.');
     } else {
-      setSuccessMessage('Sign in succesful!');
+      setSuccessMessage('Sign in successful!');
       setEmail('');
       setPassword('');
       console.log(email, password);
